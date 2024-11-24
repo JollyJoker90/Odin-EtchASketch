@@ -13,21 +13,24 @@ html {
 
 body {
     height: 100vh;
+}
+
+.main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 24px;
+    height: 100vh;
 }
 
 .containerX {
     display: flex;
 }
 
-.containerY {}
-
 .cell {
-    min-width: var(--cell_size);
+    /* min-width: var(--cell_size);
     min-height: var(--cell_size);
     background-color: goldenrod;
-    border: 2px solid #4e87a3;
-    /* flex: 1 1 auto; */
+    border: 2px solid #4e87a3; */
 }

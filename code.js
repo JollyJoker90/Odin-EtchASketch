@@ -1,5 +1,6 @@
 const container = document.querySelector(".containerY");
 
+let grid_size = 16;
 
 const createGrid = (size) => {
     // container.replaceChild();
@@ -14,7 +15,7 @@ const createGrid = (size) => {
         }
     }
 }
-createGrid(16);
+createGrid(grid_size);
 const cells = document.querySelectorAll(".cell");
 
 const setTrail = (cell) => {
