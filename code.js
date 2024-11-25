@@ -1,6 +1,6 @@
 const frame = document.querySelector(".frame");
 const resetBtn = document.querySelector("#button");
-const rgb = [2,1,3];
+const rgbColor = [255, 166, 0];
 let grid_size = 16;
 
 const createGrid = (size) => {
@@ -26,9 +26,15 @@ const createGrid = (size) => {
 
 createGrid(grid_size);
 const cells = document.querySelectorAll(".cell");
-
 const setTrail = (cell) => {
-    cell.style.backgroundColor = `"rgba${rbgColor.join(", ")}"`
+    let style = getComputedStyle(cell).backgroundColor;
+    if (style === "rgba(0, 0, 0, 0)") {
+        cell.style.backgroundColor = "rgba(" + rgbColor.join(",") + ", 0.1)";
+    } else if (parseFloat(style.split(",")[3]) < 1) {
+
+        cell.style.backgroundColor = "rgba(" + rgbColor.join(",") + ", " + (parseFloat(style.split(",")[3]) + 0.1).toString() + ")";
+    }
+    console.log(parseFloat(style.split(",")[3]));
 }
 
 
